@@ -1,0 +1,42 @@
+version: "3.6"
+
+services:
+  postgres:
+    image: postgres
+    hostname: sibumi-postgres
+    volumes:
+      - sibumi-postgres:/var/lib/postgresql/data
+
+  client:
+    build: ./client/.
+    depends_on:
+      - "server"
+    hostname: client
+    environment:
+      - NODE_ENV=development
+
+  server:
+    build: ./server/.
+    depends_on:
+      - "postgres"
+    hostname: server
+    environment:
+      - NODE_ENV=development
+
+  traefik:
+    image: traefik:v2.8
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.file.filename=/dynamic.yaml
+      - --providers.docker.network=web            
+      - --entrypoints.web.address=:80
+      - --entrypoints.web-secured.address=:443
+      - --certificatesresolvers.mytlschallenge.acme.tlschallenge=true            
+      - --certificatesresolvers.mytlschallenge.acme.storage=/ssl/acme.json
+
+
+volumes:
+  sibumi-postgres:

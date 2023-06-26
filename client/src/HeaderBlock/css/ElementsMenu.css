@@ -1,0 +1,38 @@
+.page-wrap {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+@media screen and (max-width: 600px) {
+
+    .button_close{
+        transform: scale(0.8);
+        left: 15%;
+    }
+
+    .line_burger{
+        font-size: 1.3em;
+    }
+    .line_burger_two{
+        font-size: 1.1em;
+    }
+
+    .logotype .inside_block_logotype_picture{
+        transform: scale(0.8);
+    }
+
+    .basket{
+        width: 40px;
+        height: 40px;
+    }
+    .burger{
+        width: 40px;
+        height: 40px;
+    }
+    .mobile_buttons{
+        right: 20px;
+        width: 60%;
+    }
+}

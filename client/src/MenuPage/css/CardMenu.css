@@ -1,0 +1,391 @@
+.card_block{
+    /*margin-top: 3vw;*/
+    width: 30%;
+    height: auto;
+    /*background-color: pink;*/
+    margin-bottom: 5vw;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture_block{
+    width: 100%;
+    height: 15vw;
+    margin-top: 0;
+    position: relative;
+
+}
+.background_block{
+    background-color: #cebda0;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    left: 0;
+    top: 10%;
+    z-index: 100;
+    border-radius: 7%;
+}
+
+.front_picture_block{
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    left: 7%;
+    top: 0;
+    z-index: 111;
+    border-radius: 7%;
+    overflow: hidden;
+}
+
+.img_position_menu{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.background_button_element_conditory{
+    width: 10%;
+    height: 50%;
+    top: 25%;
+    /* left: -1px; */
+    position: absolute;
+    background-color: #cebda0;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
+    /*transform: rotate(90deg);*/
+}
+
+.background_button_element_sibumi{
+    width: 10%;
+    height: 50%;
+    top: 25%;
+    /* left: -1px; */
+    position: absolute;
+    background-color: #102e58;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
+    /*transform: rotate(90deg);*/
+}
+
+.background_button_element_iz_brazzerie{
+    width: 10%;
+    height: 50%;
+    top: 25%;
+    /* left: -1px; */
+    position: absolute;
+    background-color: #675840;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-lr;
+    /*transform: rotate(90deg);*/
+}
+
+.text_background_element_iz_brazzerie{
+    /*text-align: center;*/
+    transform: rotate(180deg);
+    color: white;
+    font-family: 'Roboto Lt', sans-serif;
+    font-size: 0.8vw;
+}
+
+.text_background_element_sibumi{
+    /*text-align: center;*/
+    transform: rotate(180deg);
+    color: #cebda0;
+    font-family: 'Roboto Lt', sans-serif;
+    font-size: 0.8vw;
+}
+
+.text_background_element_conditory{
+    /*text-align: center;*/
+    transform: rotate(180deg);
+    color: white;
+    font-family: 'Roboto Lt', sans-serif;
+    font-size: 0.8vw;
+}
+
+.text_block{
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /*background-color: aqua;*/
+    min-height: 60px;
+}
+.block_with_text_menuElem{
+    width: 70%;
+    height:auto!important;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: column;
+    /*background-color: purple;*/
+}
+
+.product_link {
+    width: 100%;
+}
+
+.product_link:link {
+    text-decoration: none;
+} 
+.product_link:visited {
+    text-decoration: none;
+} 
+.product_link:hover {
+    text-decoration: none;
+} 
+.product_link:active {
+    text-decoration: none;
+} 
+
+.name_elem_menu{
+    margin-top: 5px;
+    margin-left: 10%;
+    width: 80%;
+    height: auto;
+    margin-bottom: 5px;
+    font-size: 1vw;
+    color: #403f3d;
+    line-height: 1.3vw;
+    font-family: 'Roboto Lt', sans-serif;
+    /*background-color: blue;*/
+}
+.prise_block{
+    margin-top: -5px;
+    margin-left: 10%;
+    width: 70%;
+    height: auto;
+    /*background-color: peru;*/
+    font-size: 1vw;
+    /* color: #cebda0; */
+    color: black;
+    font-weight: bold;
+    font-family: 'Roboto Lt', sans-serif;
+}
+.block_with_icon{
+    width: 30%;
+    height: 80%;
+    /*background-color: green;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.inside_basket_block{
+    /*margin-top: 10%;*/
+    width: 2vw;
+    height: 2vw;
+    /*left: 35%;*/
+    /*top: 35%;*/
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 100;
+    /*background-color: #403f3d;*/
+
+
+    /*min-height: 50px;*/
+    /*min-width: 50px;*/
+}
+.basket_img{
+    width: 100%;
+    height: 100%;
+}
+
+.plus_button{
+    cursor: pointer;
+}
+.minus_button{
+    cursor: pointer;
+}
+
+.button_count_block{
+    left: -13%;
+    top: 5%;
+    width: 8vw;
+    height: 2vw;
+    /*background-color: blue;*/
+    border-radius: 25px;
+    position: relative;
+    z-index: 111;
+}
+
+.button_count{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-color: #cebda0;
+    font-size: 0.9vw;
+    color: #cebda0;
+    font-family: 'Roboto Lt', sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    border-width: 1.5px;
+}
+
+@media screen and (max-width: 1300px){
+    .picture_block{
+        height: 20vw;
+    }
+    .text_background_element_iz_brazzerie{
+        font-size: 1vw;
+    }
+
+    .text_background_element_sibumi{
+        font-size: 1vw;
+    }
+
+    .text_background_element_conditory{
+        font-size: 1vw;
+    }
+
+    .name_elem_menu{
+        font-size: 1.4vw;
+        line-height: 1.7vw;
+    }
+    .prise_block{
+        font-size: 1.5vw;
+    }
+
+    .inside_basket_block{
+        width: 3vw;
+        height: 3vw;
+    }
+    .button_count{
+        font-size: 1.3vw;
+    }
+
+    /*.block_with_icon{*/
+    /*    width: 10vw;*/
+    /*    height: 10vw;*/
+    /*    !*min-height: 60px;*!*/
+    /*    !*min-width: 60px;*!*/
+    /*}*/
+    .button_count_block{
+        top: 2%;
+        left: -15% ;
+        width: 11vw;
+        height: 3vw;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .card_block{
+        width: 45%;
+        margin-right: 5%;
+        /*height: 40vw;*/
+    }
+    .text_background_element_iz_brazzerie{
+        font-size: 1.3vw;
+    }
+
+    .text_background_element_sibumi{
+        font-size: 1.3vw;
+    }
+
+    .text_background_element_conditory{
+        font-size: 1.3vw;
+    }
+    .picture_block{
+        height: 27vw;
+    }
+   /*.name_elem_menu{*/
+   /*     font-size: 1.3vw;*/
+   /* }*/
+   /* .prise_block{*/
+   /*     font-size: 1.3vw;*/
+   /* }*/
+    .button_count{
+        font-size: 1.8vw;
+    }
+
+    .button_count_block{
+        width: 14vw;
+        height: 4.5vw;
+    }
+    .name_elem_menu{
+        font-size: 2vw;
+        line-height: 2.3vw;
+    }
+    .prise_block{
+        font-size: 2vw;
+    }
+
+    .inside_basket_block{
+        width: 4vw;
+        height: 4vw;
+    }
+}
+@media screen and (max-width: 550px){
+    .card_block{
+        width: 80%;
+        margin-left: 5%;
+        margin-bottom: 10vw;
+    }
+    .text_background_element_iz_brazzerie{
+        font-size: 2.5vw;
+    }
+
+    .text_background_element_sibumi{
+        font-size: 2.5vw;
+    }
+
+    .text_background_element_conditory{
+        font-size: 2.5vw;
+    }
+    .picture_block{
+        height: 50vw;
+    }
+    /*.name_elem_menu{*/
+    /*    font-size: 2.8vw;*/
+    /*}*/
+    /*.prise_block{*/
+    /*    font-size: 2.8vw;*/
+    /*}*/
+    .button_count{
+        font-size: 3.5vw;
+    }
+
+    .button_count_block{
+        width: 20vw;
+        height: 7vw;
+    }
+
+    .name_elem_menu{
+        font-size: 3.2vw;
+        line-height: 3.5vw;
+    }
+    .prise_block{
+        font-size: 3vw;
+    }
+
+    .inside_basket_block{
+        width: 7vw;
+        height: 7vw;
+    }
+
+}

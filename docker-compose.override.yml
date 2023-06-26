@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  postgres:
+    env_file:
+      ./container.env
+      
+  server:
+    env_file:
+      - ./server/.env
+    labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.backend.rule=PathPrefix(`/api`)"
+    - "traefik.http.routers.backend.entrypoints=web"
+    - "traefik.http.routers.backend.middlewares=strip-api"
+    - "traefik.http.middlewares.strip-api.stripprefix.prefixes=/api"
+  
+  client:
+    volumes:
+      # - /app/node_modules
+      - ./client:/app
+    command:
+      npm run start
+    labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.client.rule=PathPrefix(`/`)"
+    - "traefik.http.routers.client-backend.entrypoints=web"
+
+  traefik:
+    ports:
+      - 3000:80
+    volumes:
+      - ${SOCK_PATH:-/var/run/docker.sock}:/var/run/docker.sock:ro
+
+  optimizer:
+    hostname: optimizer
+    build: ./optimizer
+    command: npm run dev
+    volumes:
+      - ./optimizer:/app
+      - /app/node_modules
+      - /app/images
+    ports:
+      - 5000:80

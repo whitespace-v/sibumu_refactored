@@ -1,0 +1,222 @@
+
+
+.answers_question_one{
+    margin-top: 20px;
+    display: block;
+    max-width: 500px;
+    min-width: 450px;
+    /*flex-direction: row;*/
+    width: 100%;
+    /*background-color: green;*/
+    height: 30%;
+    max-height: 600px;
+    color: #403f3d;
+    font-size: 1.7vh;
+}
+
+@media screen and (max-height: 600px) {
+    .comments{
+        margin-top: 1vh;
+    }
+    .input_for_contact{
+        margin-top: 2.5vh;
+    }
+    .error_contact{
+        font-size: 2vh;
+    }
+
+    .error_contact_time{
+        font-size: 2vh;
+        /*margin-top: -20px;*/
+    }
+    .title_form_two{
+        margin-bottom: 2.5vh;
+    }
+    .first_question_pool{
+        margin-top: 4vh;
+    }
+    .second_question_pool{
+        margin-top: 4vh;
+    }
+    .third_question_pool{
+        margin-top: 6vh;
+    }
+    .comments{
+        margin-top: 1vh;
+    }
+    .text_input_one{
+        /*width: 60%;*/
+        min-width: 150px !important;
+        /*font-size: 1vh;*/
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .answers_question_one{
+        flex-direction: column;
+        min-width: 0;
+    }
+    .form_two{
+        margin-top: 50px!important;
+    }
+    .form_one{
+        margin-top: 50px!important;
+    }
+
+    .text_input_one{
+        min-width: 260px;
+    }
+    .answer_two{
+        width: 100%;
+        min-width: 0;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .answers_one{
+        width: 100%;
+        min-width: 320px;
+    }
+    .text_input_one{
+        /*width: 60%;*/
+        min-width: 270px;
+        /*font-size: 1vh;*/
+    }
+    /*.radio_two_element{*/
+    /*    flex-direction: column;*/
+    /*    min-width: 0;*/
+    /*}*/
+}
+
+@media screen and (max-width: 790px){
+    .first_question_pool{
+        min-width: 0;
+    }
+
+    .form_two{
+        margin-top: 15px;
+    }
+    .elem2{
+        min-width: 200px;
+    }
+
+    /*.go_back_button{*/
+    /*    !*width: 150px;*!*/
+    /*    font-size: 15px;*/
+    /*}*/
+    /*.button_order_result{*/
+    /*    !*width: 200px;*!*/
+    /*    font-size: 15px;*/
+    /*}*/
+    .title_form_one{
+        font-size: 1em;
+
+        /*min-width: 400px;*/
+    }
+    .title_form_two{
+        /*width: 70% ;*/
+        font-size: 1em;
+
+    }
+
+    .second_question_pool{
+        min-width: 0;
+
+    }
+    .radio_one{
+        flex-direction: column;
+    }
+    .elem1{
+        width: 100%;
+    }
+    .elem2{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .third_question_pool{
+        min-width: 0;
+    }
+    .radio_two_element{
+        margin-bottom: 10px;
+        min-width: 320px;
+        width: auto;
+    }
+    .fours_question_pool{
+        min-width: 0;
+    }
+    /*.text_input_one{*/
+    /*    width: 60%;*/
+    /*    min-width: 220px;*/
+    /*    !*font-size: 1vh;*!*/
+    /*}*/
+}
+
+@media screen and (max-width: 530px){
+    .main_form_block_one{
+        align-items: center!important;
+        justify-content: center!important;
+    }
+    .text_input_one{
+        min-width: 200px!important;
+    }
+    .radio_two_element{
+        min-width: 275px!important;
+    }
+}
+
+.line_with_ResultForm{
+    margin-top: 0px;
+}
+
+@media screen and (max-width: 700px) {
+    .form_one{
+        width: 90% !important;
+        max-width: none!important;
+        /*background-color: green;*/
+        align-items: center!important;
+        justify-content: center;
+        /*background-color: blueviolet;*/
+
+    }
+    .form_two{
+        width: 90% !important;
+        max-width: none!important;
+        align-items: center!important;
+        justify-content: center;
+        /*background-color: green;*/
+        /*background-color: blueviolet;*/
+    }
+
+    .radio_two_element{
+        min-width: 200px;
+    }
+    .answers_one{
+        min-width: 0;
+    }
+
+
+    /*.fake{*/
+    /*    width: 12px!important;*/
+    /*    height: 12px!important;*/
+    /*}*/
+    .main_form_inside_block{
+        width: 100% !important;
+        align-items: center!important;
+        justify-content: center!important;
+        /*background-color: orange;*/
+    }
+    .text_input_one{
+        min-width: 180px;
+    }
+    .main_form_block_one{
+        /*width: 80%;*/
+        /*margin-left: 5%;*/
+        /*background-color: green;*/
+        align-items: center!important;
+        justify-content: center!important;
+        /*background-color: cornflowerblue;*/
+    }
+    .radio_two_element{
+        min-width: 250px;
+    }
+}

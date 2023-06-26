@@ -1,0 +1,8 @@
+.direnv
+container.env
+.env
+.idea
+node_modules
+client/coverage
+client/build
+.script.env

@@ -1,0 +1,65 @@
+version: "3.6"
+
+services:
+  postgres:
+    env_file:
+      $DB_ENV_PATH
+    restart: always
+
+  client:
+    image: $CI_REGISTRY_IMAGE/sibumi-client:stable
+    environment:
+      - NODE_ENV=production
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client-secured.rule=Host(`iz-brasserie.ru`) || Host(`www.iz-brasserie.ru`)"
+      - "traefik.http.routers.client-secured.entrypoints=web-secured"
+      - "traefik.http.routers.client-secured.tls.certresolver=mytlschallenge"
+
+  server:
+    image: $CI_REGISTRY_IMAGE/sibumi-server:stable
+    env_file:
+      $SERVER_ENV_PATH
+    environment:
+      - NODE_ENV=production
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend-secured.rule=(Host(`iz-brasserie.ru`) && PathPrefix(`/api`)) || (Host(`www.iz-brasserie.ru`) && PathPrefix(`/api`))"
+      - "traefik.http.routers.backend-secured.entrypoints=web-secured"
+      - "traefik.http.routers.backend-secured.tls.certresolver=mytlschallenge"
+      - "traefik.http.routers.backend-secured.middlewares=strip-api"
+      - "traefik.http.middlewares.strip-api.stripprefix.prefixes=/api"
+
+  traefik:
+    ports:
+      - 80:80
+      - 443:443
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --providers.file.filename=/dynamic.yaml
+      - --providers.docker.network=web            
+      - --entrypoints.web.address=:80
+      - --entrypoints.web-secured.address=:443
+      - --certificatesresolvers.mytlschallenge.acme.tlschallenge=true            
+      - --certificatesresolvers.mytlschallenge.acme.storage=/ssl/acme.json
+      - --entrypoints.web.http.redirections.entrypoint.to=web-secured
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $SSL_PATH:/ssl
+
+  optimizer:
+    image: $CI_REGISTRY_IMAGE/sibumi-optimizer:stable
+    hostname: optimizer
+    volumes:
+      - $IMAGES_PATH:/app/images
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.optimizer-secured.rule=Host(`images.iz-brasserie.ru`)"
+      - "traefik.http.routers.optimizer-secured.entrypoints=web-secured"
+      - "traefik.http.routers.optimizer-secured.tls.certresolver=mytlschallenge"
+

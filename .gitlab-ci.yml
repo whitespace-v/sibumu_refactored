@@ -1,0 +1,78 @@
+stages:
+  - build
+  - deploy
+
+default:
+  before_script:
+    - echo $CI_REGISTRY
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+services:
+  - docker:stable-dind
+
+build-server-main:
+  stage: build
+  only: [main]
+  image: docker:stable
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/sibumi-server:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/sibumi-server:stable server
+    - docker push $CI_REGISTRY_IMAGE/sibumi-server:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/sibumi-server:stable
+
+build-optimizer:
+  stage: build
+  only: [main]
+  image: docker:stable
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/sibumi-optimizer:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/sibumi-optimizer:stable optimizer
+    - docker push $CI_REGISTRY_IMAGE/sibumi-optimizer:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/sibumi-optimizer:stable
+
+build-client-main:
+  stage: build
+  only: [main]
+  image: docker:stable
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/sibumi-client:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/sibumi-client:stable client
+    - docker push $CI_REGISTRY_IMAGE/sibumi-client:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/sibumi-client:stable
+
+build-server-dev:
+  stage: build
+  only: [dev]
+  image: docker:stable
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/sibumi-server:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/sibumi-server:latest server
+    - docker push $CI_REGISTRY_IMAGE/sibumi-server:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/sibumi-server:latest
+
+build-client-dev:
+  stage: build
+  only: [dev]
+  image: docker:stable
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/sibumi-client:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/sibumi-client:latest client
+    - docker push $CI_REGISTRY_IMAGE/sibumi-client:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/sibumi-client:latest
+
+
+deploy-main:
+  stage: deploy
+  only: [main]
+  tags: [docker-production]
+  environment: production
+  script:
+    - docker pull $CI_REGISTRY_IMAGE/sibumi-client:stable
+    - docker pull $CI_REGISTRY_IMAGE/sibumi-server:stable
+    - docker pull $CI_REGISTRY_IMAGE/sibumi-optimizer:stable
+    - docker compose -p main -f docker-compose.yml -f production.yml up -d --no-build
+
+deploy-dev:
+  stage: deploy
+  only: [dev]
+  tags: [docker-production]
+  environment: development
+  script:
+    - docker pull $CI_REGISTRY_IMAGE/sibumi-client:latest
+    - docker pull $CI_REGISTRY_IMAGE/sibumi-server:latest
+    - docker compose -p dev -f docker-compose.yml -f testing.yml up -d --no-build

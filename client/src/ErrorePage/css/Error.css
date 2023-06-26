@@ -1,0 +1,120 @@
+.error_fake_page{
+    position: absolute;
+    left: 0;
+    top: 140px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /*background-color: blueviolet;*/
+}
+.error_pool{
+    width: 100%;
+    height: 72vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer{
+    margin-top: 10%;
+}
+
+html {
+    overflow-y: scroll!important;
+}
+
+.error_element{
+    width: 50vw;
+    height: 35vw;
+    /*background-color: blue;*/
+    min-width: 500px;
+    min-height: 400px;
+    max-width: 1200px;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.block_with_numbers{
+    width: 100%;
+    height: 90%;
+    /*background-color: aqua;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.number{
+    width: 33%;
+    height: 80%;
+    /*background-color: purple;*/
+    vertical-align: center;
+    font-size: 26vw;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    color: #cebda0;
+}
+
+
+
+.block_with_text{
+    width: 100%;
+    height: 10%;
+    /*background-color: #007aff;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+.text_error{
+    font-size: 2vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: #cebda0;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 650px){
+    .error_element{
+        min-width: 350px;
+        min-height: 250px;
+        /*max-width: 1200px;*/
+        /*max-height: 800px;*/
+    }
+    .number{
+        font-size: 11em!important;
+    }
+    .text_error{
+        font-size: 0.9em!important;
+    }
+}
+@media screen and (max-width: 1000px){
+    .number{
+        font-size: 15em;
+    }
+    .text_error{
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (min-width: 2500px){
+    .number{
+        font-size: 40em;
+    }
+    .text_error{
+        font-size: 3em;
+    }
+}

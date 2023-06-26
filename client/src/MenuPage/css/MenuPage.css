@@ -1,0 +1,298 @@
+html{
+    overflow-y: scroll!important;
+}
+
+.menu_inside_block{
+    position: absolute;
+    left: 0;
+    top: 140px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    /*background-color: aqua;*/
+}
+.block_with_logotypes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    /*background-color: cornflowerblue;*/
+    top: 25px;
+    width: 100%;
+    height: auto;
+}
+.fake_block{
+    position: relative;
+    width: 220px;
+    height: 100px;
+    left: 5%;
+}
+
+.inside_block_logo{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    left: 70px;
+    width: 60%;
+    height: auto;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+.second_inside_block_for_logo{
+    position: relative;
+    /*top: 21%;*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-left: 4vw;
+    /*background-color: blueviolet;*/
+}
+
+.block_logo_one{
+    width: 27%;
+    height: 6vw;
+    /*margin-right: 10vw;*/
+    /*background-color: #007aff;*/
+    /*max-width: 250px;*/
+    /*min-width: 225px;*/
+    /*max-height: 100px;*/
+}
+.block_logo_two{
+    width: 27%;
+    height: 6vw;
+    /*margin-right: 10vw;*/
+    /*background-color: #007aff;*/
+}
+.block_logo_three{
+    width: 27%;
+    height: 6vw;
+}
+
+.logotype_in_block{
+    margin-left: 1px;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1300px){
+    .fake_block{
+        display: none;
+    }
+    .fake_block_content{
+        display: none;
+    }
+    .second_inside_block_for_logo{
+        left: 0;
+    }
+    .second_inside_block_for_elemContent{
+        left: 0;
+    }
+    .inside_block_logo{
+        left: 5%;
+        width: 85%;
+    }
+    .inside_block_content{
+        left: 5% !important;
+        width: 90% !important;
+    }
+
+    .block_with_logotypes{
+        top: 25px;
+    }
+    .block_with_mainContent{
+        top: 50px!important;
+    }
+    .block_logo_one{
+        width: 20vw;
+        height: 8vw;
+    }
+    .block_logo_two{
+        width: 20vw;
+        height: 8vw;
+    }
+    .block_logo_three{
+        width: 20vw;
+        height: 8vw;
+    }
+}
+
+
+@media screen and (max-width: 890px){
+    .block_logo_one{
+        width: 23vw;
+        height: 9vw;
+        /*min-width: 150px;*/
+        /*min-height: 60px;*/
+    }
+    .block_logo_two{
+        width: 23vw;
+        height: 9vw;
+        /*min-width: 150px;*/
+        /*min-height: 60px;*/
+    }
+    .block_logo_three{
+        width: 23vw;
+        height: 9vw;
+        /*min-width: 150px;*/
+        /*min-height: 60px;*/
+    }
+}
+
+.main_content_block{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.fake_block_content{
+    position: relative;
+    width: 220px;
+    height: 100px;
+    left: 5%;
+    /*background-color: #cebda0;*/
+}
+
+.block_with_mainContent{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    top: 50px;
+    width: 100%;
+    height:auto;
+    min-height: 55vh;
+}
+.inside_block_content{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    left: 70px;
+    width: 65%;
+    height: auto;
+    align-items: center;
+}
+
+.second_inside_block_for_elemContent{
+    position: relative;
+    /*top: 21%;*/
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-left: 4vw;
+    /*background-color: purple;*/
+}
+
+
+
+/*окно с элементами меню*/
+
+.page_with_positionElem{
+    width: 100%;
+    height: auto;
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    min-height: 50vh;
+}
+
+@media screen and (max-width: 550px){
+        .page_with_positionElem{
+            /*justify-content: space-around;*/
+        }
+    .block_logo_one{
+        width: 30vw;
+        height: 10vw;
+        margin-right: 10vw;
+        min-width: 150px;
+        min-height: 60px;
+
+    }
+    .block_logo_two{
+        width: 30vw;
+        height: 10vw;
+        min-width: 150px;
+        min-height: 60px;
+        margin-right: 10vw;
+    }
+    .block_logo_three{
+        width: 30vw;
+        height: 10vw;
+        min-width: 150px;
+        min-height: 60px;
+    }
+    .second_inside_block_for_logo{
+       overflow: hidden;
+        justify-content: normal;
+    }
+}
+
+
+/*окно для brasserie*/
+.izBrasserie_main_block{
+    width: 100%;
+    height: auto;
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+.izBrasserie_main_block_notActive{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/*окно для Sibumi*/
+.Sibumi_main_block{
+    width: 100%;
+    height: auto;
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+.Sibumi_main_block_notActive{
+    display: none;
+}
+
+
+/*окно кандитории*/
+
+.Canditoriya_main_block{
+    width: 100%;
+    height: auto;
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+.Canditoriya_main_block_notActive{
+    display: none;
+}

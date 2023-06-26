@@ -1,0 +1,12 @@
+.direnv
+container.env
+.env
+.idea
+.log
+node_modules
+client/coverage
+client/build
+.script.env
+mydeploy.bash
+optimizer/result_images
+optimizer/source_images

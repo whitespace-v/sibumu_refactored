@@ -1,0 +1,350 @@
+
+html {
+    overflow-y: scroll!important;
+}
+
+
+/*основное окно*/
+.mainFieldService_Contact{
+    position: absolute;
+    left: 0;
+    top: 140px;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+}
+.restorans{
+    left: 15%;
+    width: 85%;
+    top: 50px;
+    height: auto;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    /*margin-bottom: 100px;*/
+}
+/*Карточка с данными ресторанов*/
+.elem{
+    /*margin-top: 25px;*/
+    width: 30%;
+    display: inline-block;
+    height: 600px;
+    margin-right: 2.5%;
+    min-width: 400px;
+    margin-bottom: 50px;
+
+}
+
+.pictureOnContact{
+    width: 90%;
+    height: auto;
+    max-width: 320px;
+    min-width: 320px;
+    overflow: hidden;
+}
+.logotype_img_contacts{
+    width: 100%;
+   height: 100%;
+}
+.main_logotype_block{
+    width: 100%;
+    height: 5vw;
+    max-height: 110px;
+    min-height: 120px;
+}
+
+/*body{*/
+/*    position: relative;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*}*/
+
+
+@media screen and (max-width: 1535px){
+    .restorans{
+        width: 75%;
+        left: 15%;
+        justify-content: space-between;
+    }
+    .elem{
+        width: 45%;
+        margin-right: 0;
+        height: 525px;
+        min-width: 270px;
+    }
+    /*.main_logotype_block{*/
+    /*    width: 65%;*/
+    /*    min-width: 240px;*/
+    /*}*/
+    .pictureOnContact{
+        width: 60%;
+        max-width: none;
+        min-width: 300px;
+        min-height: 120px;
+    }
+    .main_logotype_block{
+        height: 110px;
+    }
+
+}
+
+.winForm_contact{
+    background-color: white;
+    border-radius: 50%;
+    width:70vh;
+    height:70vh;
+    min-width: 800px;
+    min-height: 800px;
+    max-height: 1000px;
+    max-width: 1000px;
+    position: absolute;
+    z-index: 111;
+    animation-fill-mode: forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    transform: scale(1);
+    /*left: 30%;*/
+    /*top: 13%;*/
+}
+
+.final1{
+    position: absolute;
+    font-size: 30px;
+    top: 45%;
+    left: 10%;
+    display: none;
+    font-family: 'Roboto Lt', sans-serif;
+    color: #403f3d;
+
+}
+.final2{
+    position: absolute;
+    font-size: 30px;
+    top: 45%;
+    left: 10%;
+    display: none;
+    font-family: 'Roboto Lt', sans-serif;
+    color: #403f3d;
+}
+.final3{
+    position: absolute;
+    font-size: 30px;
+    top: 45%;
+    left: 10%;
+    display: none;
+    font-family: 'Roboto Lt', sans-serif;
+    color: #403f3d;
+}
+
+@media screen and (max-width: 965px){
+    .elem{
+        width: 80%;
+        margin-right: 0;
+        height: 500px;
+        /*background-color: blue;*/
+    }
+    .pictureOnContact{
+        height: 120px;
+        min-height: 120px;
+        min-width: 350px;
+        width: 60%;
+    }
+    .main_logotype_block{
+        height: 13vw;
+        max-height: none;
+        min-height: 120px;
+    }
+    .restorans{
+        justify-content: right;
+        margin-bottom: 25px;
+        /*background-color: blueviolet;*/
+    }
+    .winForm_contact{
+        transform: scale(0.7);
+    }
+}
+
+@media screen and (max-height: 630px) {
+    .winForm_contact{
+        transform: scale(0.45);
+    }
+}
+
+@media screen and (max-width: 630px){
+    .elem{
+        margin-right: 0;
+        width: auto;
+        height: 450px;
+        /*min-width: 300px;*/
+    }
+    .map_reserve{
+        margin-top: -25px;
+    }
+    .restorans{
+       left: 12.5%;
+        justify-content: center;
+        margin-bottom: 0;
+
+    }
+    .information_about_point{
+        margin-top: 10px!important;
+    }
+    .pictureOnContact{
+        width: 80%;
+        height: 100px;
+        min-height: 0;
+        min-width: 270px;
+    }
+    .main_logotype_block{
+        height: 90px;
+        min-height: 0;
+    }
+    .winForm_contact{
+        transform: scale(0.45);
+    }
+    .final1{
+        /*left: 19%;*/
+        font-size: 25px;
+        left: auto;
+    }
+    .final2{
+        /*left: 19%;*/
+        font-size: 25px;
+        left: auto;
+    }
+    .final3{
+        /*left: 19%;*/
+        font-size: 25px;
+        left: auto;
+    }
+}
+
+.information_about_point{
+    height: auto;
+    margin-top: 50px;
+    line-height: 7px;
+    margin-left: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #403f3d;
+    font-weight: bolder;
+    /*background-color: blue;*/
+}
+.block_1{
+    height: auto;
+    text-align: left;
+    margin-bottom: 20px;
+    overflow: hidden;
+    /*background-color: blueviolet;*/
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+.block_2{
+    text-align: left;
+    margin-bottom: 70px;
+    overflow: hidden;
+}
+
+.points_first_rest{
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+
+.point1{
+    margin-right: 20px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    /* background-color: rgb(206, 189, 160); */
+    background-color: #cebda0;
+    border-radius: 50%;
+}
+.button1{
+    position: relative;
+    /* color: rgb(206, 189, 160); */
+    color: #cebda0;
+    top: 30px;
+    left: -25px;
+    font-size: 17px;
+    background-color: white;
+    border-width: 0;
+    letter-spacing: 2px;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+.button2{
+    position: relative;
+    /* color: rgb(206, 189, 160); */
+    color: #cebda0;
+    top: 30px;
+    left: -25px;
+    font-size: 17px;
+    background-color: white;
+    border-width: 0;
+    letter-spacing: 2px;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+.button3{
+    position: relative;
+    /* color: rgb(206, 189, 160); */
+    color: #cebda0;
+    top: 30px;
+    left: -25px;
+    font-size: 17px;
+    background-color: white;
+    border-width: 0;
+    letter-spacing: 2px;
+    width: 300px;
+    height: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.text_block_elem{
+    /*background-color: aqua;*/
+    height: 100%;
+    width: 100%;
+}
+
+.text_in_block{
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #403f3d;
+    /*background-color: green;*/
+    /*background-color: blueviolet;*/
+}
+.link_map{
+    /* color: rgb(206, 189, 160); */
+    color: #cebda0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    text-decoration: none;
+    border-bottom-width: 2px;
+    /* border-bottom-color: rgb(206, 189, 160); */
+    border-bottom-color: #cebda0;
+    border-bottom-style: dotted;
+}
+.map_reserve{
+    text-align: left;
+    letter-spacing: 2px;
+
+
+}

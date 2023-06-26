@@ -1,0 +1,225 @@
+.result_window{
+    width: 100%;
+    height: auto;
+    top: 140px;
+    left: 0;
+    position: absolute;
+    /*background-color: blueviolet;*/
+}
+
+.pool_with_forms{
+    display: none;
+}
+
+.titles_basket_resultWindow{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    left: 70px;
+    width: 60%;
+    min-width: 300px;
+    height: auto;
+    /*background-color: violet;*/
+}
+
+.title_header_resulWindow{
+    font-family: 'Roboto', sans-serif;
+    word-spacing: 3px;
+    font-size: 2em;
+    color: #403f3d;
+    margin-left: 4vw;
+    min-width: 240px;
+}
+.title2_header_result_form{
+    margin-top: 0px;
+    font-family: 'Roboto', sans-serif;
+    color: #403f3d;
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 4vw;
+    /*background-color: blue;*/
+    width: 45%;
+    min-width: 240px;
+    height: auto;
+    line-height: 30px;
+}
+.number_order{
+    font-family: 'Roboto Lt', sans-serif;
+    font-size: 1.1em;
+    color: #403f3d;
+}
+.pool_with_forms.active{
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    /*max-width: 95vw;*/
+    /*margin-left: 10%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    min-height: 80vh;
+    max-width: 3000px;
+    /*background-color: blueviolet;*/
+}
+.main_form_inside_block{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+    /*background-color: green;*/
+}
+
+@media only screen and (max-width: 700px) {
+		.main_form_inside_block {
+				flex-direction: column;
+		}
+}
+
+
+.finalWindow_pool{
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.text_about_order{
+    width: 100%;
+    margin-top: 100px;
+    padding-left: 2.5%;
+}
+.additional_information{
+    max-width: 450px;
+    margin-top: 50px;
+    font-size: 18px;
+
+}
+
+.title_order_list{
+    margin-top: 25px;
+    font-size: 18px;
+}
+.title_form_two{
+    width: 80%;
+    height: auto;
+    /*margin-right: 20%;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.order_points_list{
+    width: 100%;
+    height: auto;
+}
+.line_with_ResultForm.notActive{
+    display: none;
+}
+
+@media screen and (max-width: 1500px) {
+    .titles_basket_resultWindow{
+        left: 5%;
+    }
+    /*.order_points_list{*/
+    /*    margin-top: 5vw;*/
+    /*}*/
+}
+
+@media (max-width: 1100px) {
+  .title_header_resulWindow{
+      font-size: 1.7em;
+  }
+    /*.title2_header_result_form{*/
+    /*    font-size: 0.9em;*/
+    /*}*/
+}
+@media screen and (max-width: 790px) {
+    .text_order_result {
+        font-size: 13px;
+    }
+    .order_points_list{
+       margin-top: -35px;
+    }
+}
+
+.prise_finalWindow{
+    width: 100%;
+    height: 150px;
+    /*background-color: blue;*/
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    left: 0;
+}
+
+.order_card_result{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.prise_info{
+    /*border-top-style: solid;*/
+    /*border-top-width: 1px;*/
+    /*border-top-color: #403f3d;*/
+    margin-top: 25px;
+    width: 67%;
+    /*background-color: blueviolet;*/
+    font-family: 'Roboto Lt', sans-serif;
+    font-size: 1.4em;
+    color: #403f3d;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 70px;
+}
+.main_order_block_result_window{
+    margin-left: 4vw;
+    position: absolute;
+    /*top: 21%;*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    /*align-items: center;*/
+    border-top-width: 0.8px;
+    border-top-style: solid;
+    border-top-color: #cebda0;
+    justify-content: right;
+    /*background-color: violet;*/
+}
+
+.text_order_result_window{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    font-size: 20px;
+    height: 60%;
+    width: 380px;
+    text-align: center;
+    background-color: blueviolet;
+}
+.text_order_result{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: flex-start;
+    font-family: 'Roboto Lt', sans-serif;
+    font-weight: normal;
+    color: #403f3d;
+    height: 50%;
+    width: 100%;
+}
