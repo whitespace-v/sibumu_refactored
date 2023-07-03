@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === "production") disableReactDevTools();
 
 const rootElem = document.getElementById('root');
 const root = createRoot(rootElem);
+
 root.render(
     <RouterComponent/>
 );

@@ -24,37 +24,33 @@ import Delivery from './Delivery';
 
 const RouterComponent = () => {
 	return (
-		<Router>
-			<Routes>
-				{/* eslint-disable-next-line react/jsx-pascal-case */}
-				<Route path="/iz-brasserie" element={<Iz_brasserie />} />,
-				<Route path="/payment" element={<ServicePage />} />
-				<Route path="/" element={<Main />} />
-				<Route path="/contacts" element={<Contact />} />
-				<Route path="/menu" element={<Menu />} />
-				<Route path="/specials/:name" element={<Specials />} />
-				{/*wrapped components in store*/}
-				<Route path="/izBrasserie"
-					   element={<Provider store={store}><PersistGate loading={null} persistor={persister}><Menu numberRestoran={1} /></PersistGate></Provider>}
-				/>
-				<Route path="/Konditory"
-					   element={<Provider store={store}><PersistGate loading={null} persistor={persister}><Menu numberRestoran={3} /></PersistGate></Provider>}
-				/>
-				<Route path="/Sibumii"
-					   element={<Provider store={store}><PersistGate loading={null} persistor={persister}><Menu numberRestoran={2} /></PersistGate></Provider>}
-				/>
-				<Route path="/basket" element={<Provider store={store}><PersistGate loading={null} persistor={persister}><Basket /></PersistGate></Provider>} />
-				<Route path="*" element={<Error />} />
-				<Route path="/order/:id" element={<ResultPage />} />
-				<Route path="/load" element={<Loading />} />
-				<Route path="/sibumi" element={<Sibumi />} />
-				<Route path="/konditoria" element={<Konditory />} />
-				<Route path="/about" element={<About />} />
-				<Route path="/menu/:id" element={<Provider store={store}><PersistGate loading={null} persistor={persister}><ProductCard /></PersistGate></Provider>} />
-				<Route path="/specials/card/:id" element={<Provider store={store}><PersistGate loading={null} persistor={persister}><SpecialsCard /></PersistGate></Provider>} />
-				<Route path="/delivery" element={<Delivery />} />
-			</Routes>
-		</Router>
+		<Provider store={store}><PersistGate loading={null} persistor={persister}>
+			<Router>
+				<Routes>
+					{/* eslint-disable-next-line react/jsx-pascal-case */}
+					<Route path="/iz-brasserie" element={<Iz_brasserie />} />,
+					<Route path="/payment" element={<ServicePage />} />
+					<Route path="/" element={<Main />} />
+					<Route path="/contacts" element={<Contact />} />
+					<Route path="/menu" element={<Menu />} />
+					<Route path="/specials/:name" element={<Specials />} />
+					<Route path="/izBrasserie" element={<Menu numberRestoran={1} />}/>
+					<Route path="/Konditory" element={<Menu numberRestoran={3} />}/>
+					<Route path="/Sibumii" element={<Menu numberRestoran={2} />}/>
+					<Route path="/basket" element={<Basket />}/>
+					<Route path="*" element={<Error />} />
+					<Route path="/order/:id" element={<ResultPage />} />
+					<Route path="/load" element={<Loading />} />
+					<Route path="/sibumi" element={<Sibumi />} />
+					<Route path="/konditoria" element={<Konditory />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/menu/:id" element={<ProductCard />} />
+					<Route path="/specials/card/:id" element={<SpecialsCard />} />
+					<Route path="/delivery" element={<Delivery />} />
+				</Routes>
+			</Router>
+		</PersistGate>
+		</Provider>
 	);
 };
 

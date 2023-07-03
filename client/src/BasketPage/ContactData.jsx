@@ -125,7 +125,8 @@ const ContactData = ({ delivery, deliveryAdress, setAdress, name, setName, surna
 	const [adr, setAdr] = useState('');
 	const [street, setStreet] = useState('');
 	const [number, setNumber] = useState('');
-	const [phoneElem, setPhoneElem] = useState('')
+	const [phoneElem, setPhoneElem] = useState(phone)
+
 
 	const [nameDirty, setNameDirty] = useState(false);
 	const [surnameDirty, setSurnameDirty] = useState(false);
@@ -193,6 +194,7 @@ const ContactData = ({ delivery, deliveryAdress, setAdress, name, setName, surna
 							   onBlur={e => blurChecked(e)}
 							   placeholder={"+7 (999) 99 99 999"}
 							   name="phone"
+							   value={phoneElem}
 							   mask="+7(999) 99 99 999"
 					/>
 				</div>
@@ -301,7 +303,7 @@ const ContactData = ({ delivery, deliveryAdress, setAdress, name, setName, surna
 								   onBlur={e => blurChecked(e)}
 								   name="address"
 								   type="number"
-								   value={deliveryAdress.doorphone}
+								   value={deliveryAdress.flat}
 								   placeholder="ВВЕДИТЕ НОМЕР КВАРТИРЫ" />
 						</div>
 					</div>

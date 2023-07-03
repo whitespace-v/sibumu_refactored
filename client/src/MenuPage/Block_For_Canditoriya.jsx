@@ -6,13 +6,29 @@ import GenerateMass from "../Pages/functions/generateMass";
 import noPicture from "../picture_izBrazzerie/noPic.jpg";
 import { useEffect } from 'react';
 import axios from 'axios';
+import {useDispatch, useSelector} from "react-redux";
+import {syncCategoryIndex} from "../Pages/ReducerRedux";
 
 const BlockForCanditoriya = ({ stateBlock, handleConditory, cardUrl, withoutCategories }) => {
+
+	const syncedActive_linkElement = useSelector(state => state.categoryIndex)
+	const [active_linkElement, setActive_linkElement] = useState(syncedActive_linkElement);
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		dispatch(syncCategoryIndex(active_linkElement))
+	}, [active_linkElement])
+
+
 	useEffect(() => {
 		const fetchData = async () => {
 			const data = await handleConditory()
 			setListCanditoriya(data)
-			setActive_linkElement(data[0].id)
+			if (data.find(o => o.id === syncedActive_linkElement)) {
+				setActive_linkElement(syncedActive_linkElement)
+			} else {
+				setActive_linkElement(data[0].id)
+			}
 		}
 		fetchData()
 	}, [])
@@ -22,7 +38,7 @@ const BlockForCanditoriya = ({ stateBlock, handleConditory, cardUrl, withoutCate
 
 
 	// Активная категория
-	const [active_linkElement, setActive_linkElement] = useState("hot");
+
 
 	const variants = () => {
 		// BUG: Короче странная штука, но пришлось добавлять проверку на длину, потому что иначе падает при первой загрузке страницы
@@ -32,8 +48,6 @@ const BlockForCanditoriya = ({ stateBlock, handleConditory, cardUrl, withoutCate
 			return GenerateMass(listCanditoriya, active_linkElement)
 		}
 	}
-
-
 	return (
 		<div className={stateBlock ? "Canditoriya_main_block" : "Canditoriya_main_block_notActive"}>
 			{!withoutCategories && <LinksPool active={active_linkElement} setActive={setActive_linkElement} list_map={listCanditoriya} />}

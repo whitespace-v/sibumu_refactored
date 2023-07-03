@@ -62,8 +62,6 @@ const BasketPage = () => {
 		setDeliveryType(delivery)
 	}
 
-	console.log('element', element)
-
 	let mp = element.map(order =>
 		<Provider store={store}>
 			<PersistGate loading={null} persistor={persister}>

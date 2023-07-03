@@ -18,6 +18,7 @@ import Konditoriya from "../MenuPage/Block_For_Canditoriya"
 import axios from 'axios';
 import {useDispatch, useSelector} from "react-redux";
 import {syncSelectedBranch} from "./ReducerRedux";
+import {useNavigate} from "react-router-dom";
 
 const MenuPage = ({ numberRestoran }) => {
 //added redux logics
@@ -25,6 +26,33 @@ const MenuPage = ({ numberRestoran }) => {
 	const syncedClickBlockTwo = useSelector(state => state.clickBlockTwo)
 	const syncedClickBlockThree = useSelector(state => state.clickBlockThree)
 	const syncedClickBlockOne = useSelector(state => state.clickBlockOne)
+	const [counter, setCounter] = useState(0);
+	const navigate = useNavigate()
+	//changed set initial state from dispatch
+	const [clickBlockTwo, setClickBlockTwo] = useState(syncedClickBlockTwo);
+	const [clickBlockThree, setClickBlockThree] = useState(syncedClickBlockThree);
+	const [clickBlockOne, setClickBlockOne] = useState(syncedClickBlockOne);
+
+
+
+	useEffect(() => {
+		dispatch(syncSelectedBranch({clickBlockTwo, clickBlockThree, clickBlockOne}))
+		if (clickBlockOne){
+			navigate('/izBrasserie')
+			dispatch(syncSelectedBranch({clickBlockOne: true, clickBlockTwo: false, clickBlockThree: false}))
+		}
+		if (clickBlockTwo){
+			navigate('/Sibumii')
+			dispatch(syncSelectedBranch({clickBlockOne: false, clickBlockTwo: true, clickBlockThree: false}))
+		}
+		if (clickBlockThree){
+			navigate('/Konditory')
+			dispatch(syncSelectedBranch({clickBlockOne: false, clickBlockTwo: false, clickBlockThree: true}))
+		}
+	}, [clickBlockOne, clickBlockTwo, clickBlockThree])
+
+
+
 	const fetchBrasserie = async () => {
 		try {
 			const response = await axios("/api/test/1")
@@ -59,16 +87,6 @@ const MenuPage = ({ numberRestoran }) => {
 		setState(window.innerWidth);
 	}
 
-	const [counter, setCounter] = useState(0);
-
-	//changed set initial state from dispatch
-	const [clickBlockTwo, setClickBlockTwo] = useState(syncedClickBlockTwo);
-	const [clickBlockThree, setClickBlockThree] = useState(syncedClickBlockThree);
-	const [clickBlockOne, setClickBlockOne] = useState(syncedClickBlockOne);
-	//added sync logic
-	useEffect(() => {
-		dispatch(syncSelectedBranch({clickBlockTwo, clickBlockThree, clickBlockOne}))
-	}, [clickBlockTwo, clickBlockThree, clickBlockOne])
 
 	if (numberRestoran != null) {
 		switch (numberRestoran) {

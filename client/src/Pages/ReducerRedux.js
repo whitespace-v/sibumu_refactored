@@ -83,7 +83,8 @@ const orderPos = createSlice({ //данная фича исключает мут
             state.clickBlockOne = action.payload.clickBlockOne
         },
         syncCategoryIndex: (state, action) => { //полная очистка лс и суммы (необходимо обернуть компонент, который будет работать с лс: <Provider store={store}><PersistGate loading={null} persistor={persister}><Basket/></PersistGate></Provider> пример вызова функций redux смотрите в папке MainPage, компоненты CardMenu и Button_Count
-            state.categoryIndex = action.payload.categoryIndex
+            state.categoryIndex = action.payload
+
         },
     }
 })

@@ -24,17 +24,16 @@ const BlockForIzBrasserie = ({ stateBlock, handleBrasserie, cardUrl, withoutCate
 	}, [active_linkElement])
 
 	useEffect(() => {
-
 		const fetchData = async () => {
 			const data = await handleBrasserie()
-			console.log(data)
 			setIzBrasserie(data)
-			if (!syncedActive_linkElement) {
+			if (data.find(o => o.id === syncedActive_linkElement)) {
+				setActive_linkElement(syncedActive_linkElement)
+			} else {
 				setActive_linkElement(data[0].id)
 			}
 		}
 		fetchData()
-
 	}, [])
 
 

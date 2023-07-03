@@ -5,15 +5,29 @@ import Page_With_Position from "./Page_With_Position";
 import GenerateMass from "../Pages/functions/generateMass";
 import noPicture from "../picture_izBrazzerie/noPic.jpg";
 import { useEffect } from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {syncCategoryIndex} from "../Pages/ReducerRedux";
 
 
 const BlockForSibumi = ({ stateBlock, handleSibumi, cardUrl, withoutCategories }) => {
+	const dispatch = useDispatch()
+	const syncedActive_linkElement = useSelector(state => state.categoryIndex)
+	const [active_linkElement, setActive_linkElement] = useState(syncedActive_linkElement);
+
+	useEffect(() => {
+		dispatch(syncCategoryIndex(active_linkElement))
+	}, [active_linkElement])
+
 	// Запрос на получение каталога
 	useEffect(() => {
 		const fetchData = async () => {
 			const data = await handleSibumi()
 			setlSibumi(data)
-			setActive_linkElement(data[0].id)
+			if (data.find(o => o.id === syncedActive_linkElement)) {
+				setActive_linkElement(syncedActive_linkElement)
+			} else {
+				setActive_linkElement(data[0].id)
+			}
 		}
 		fetchData()
 	}, [])
@@ -22,7 +36,7 @@ const BlockForSibumi = ({ stateBlock, handleSibumi, cardUrl, withoutCategories }
 	const [listSibumi, setlSibumi] = useState([]);
 
 	// Активная категория
-	const [active_linkElement, setActive_linkElement] = useState();
+
 
 	const variants = () => {
 		// BUG: Короче странная штука, но пришлось добавлять проверку на длину, потому что иначе падает при первой загрузке страницы
